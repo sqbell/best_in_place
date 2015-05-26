@@ -57,6 +57,10 @@ module BestInPlace
         options[:data]['bip-raw'] = 'true'
       end
 
+      if opts[:interpret]
+        options[:data]['bip-interpret'] = 'true'
+      end
+
       # delete nil keys only
       options[:data].delete_if { |_, v| v.nil? }
       container = opts[:container] || BestInPlace.container
